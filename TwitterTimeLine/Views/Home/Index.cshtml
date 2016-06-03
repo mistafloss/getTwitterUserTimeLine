@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="search_tweets">
+    @using (Html.BeginForm())
+    {
+        <div class="search-tweets-inner">
+            <div class="search-tweets-left-column">
+                <input type="text" name="twitterUsername" class="form-control" id="twitterUsername" placeholder="Enter a twitter username..." />
+            </div>
+            <div class="search-tweets-right-column">
+                <input type="submit" id="get_tweets" class="search-tweets-btn" value="Get Tweets" />
+            </div>
+        </div>
+    }
+</div>
+
+<div class="row">
+
+    <div class="tweets_list">
+        @if (ViewBag.Tweets != null)
+        {
+            foreach (var tweet in ViewBag.Tweets)
+            {
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <img src="@tweet.User.ProfileImageUrl" alt="@tweet.User.ScreenName" title="@tweet.User.ScreenName" />
+                    </div>
+                    <div class="">
+                        <span>@tweet.User.Name, @tweet.User.Description</span>
+                        <p>@tweet.Text </p>
+                    </div>
+
+                </div>
+
+            }
+        }
+    </div>
+
+
+</div>
+
+
+
