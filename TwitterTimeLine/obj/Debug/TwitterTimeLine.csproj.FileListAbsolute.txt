@@ -21,4 +21,3 @@ U:\TwitterTimeLine\TwitterTimeLine\bin\System.Web.Helpers.xml
 U:\TwitterTimeLine\TwitterTimeLine\bin\System.Web.Mvc.xml
 U:\TwitterTimeLine\TwitterTimeLine\obj\Debug\TwitterTimeLine.dll
 U:\TwitterTimeLine\TwitterTimeLine\obj\Debug\TwitterTimeLine.pdb
-U:\TwitterTimeLine\TwitterTimeLine\obj\Debug\TwitterTimeLine.csprojResolveAssemblyReference.cache

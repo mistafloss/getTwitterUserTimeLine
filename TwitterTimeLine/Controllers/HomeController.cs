@@ -6,10 +6,14 @@ using System.Web.Mvc;
 using TweetSharp;
 using System.Configuration;
 
+using Newtonsoft.Json;
+
 namespace TwitterTimeLine.Controllers
 {
     public class HomeController : Controller
     {
+
+
         // GET: Home
         public ActionResult Index()
         {
@@ -19,7 +23,9 @@ namespace TwitterTimeLine.Controllers
         [HttpPost]
         public ActionResult Index(string twitterUsername)
         {
-            //Retrieve consumer key and consumer secret
+            try
+            {
+                 //Retrieve consumer key and consumer secret
             string twitterConsumerKey = ConfigurationManager.AppSettings["TwitterConsumerKey"].ToString();
             string twitterConsumerSecret = ConfigurationManager.AppSettings["TwitterConsumerSecret"].ToString();
             var twitterService = new TwitterService(twitterConsumerKey, twitterConsumerSecret);
@@ -32,10 +38,18 @@ namespace TwitterTimeLine.Controllers
 
             IEnumerable<TwitterStatus> tweets = twitterService.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions { ScreenName = twitterUsername, Count = 10 });
 
-            ViewBag.Tweets = tweets;
-
+            
+                ViewBag.Tweets = tweets;
+            
             return View();
-            //return Json(tweets, JsonRequestBehavior.AllowGet);
+
+            }catch(Exception ex){
+                Response.Write(ex.Message);
+                return View();
+            }
+           
+           //return Json(tweets, JsonRequestBehavior.AllowGet);
         }
+
     }
 }
