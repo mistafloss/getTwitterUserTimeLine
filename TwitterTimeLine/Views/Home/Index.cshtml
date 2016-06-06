@@ -31,12 +31,12 @@
             foreach (var tweet in ViewBag.Tweets)
             {
                 
-                <div class="col-md-12">
-                    <div class="col-md-4">
+                <div class="col-md-12 single-tweet">
+                    <div class="twitter-user-photo">
                         <img src="@tweet.User.ProfileImageUrl" alt="@tweet.User.ScreenName" title="@tweet.User.ScreenName" />
                     </div>
-                    <div class="">
-                        <span>@tweet.User.Name, @tweet.User.Description</span>
+                    <div class="twitter-user-desc-tweet">
+                        <span class="twitter-user-name"> @tweet.User.Name </span> <span>@tweet.User.ScreenName, @String.Format("{0: MMMM d yyyy}", tweet.CreatedDate)</span>
                         <p>@tweet.Text </p>
                     </div>
 
@@ -47,9 +47,7 @@
         
     </div>
 
-    <div id="tweets-container" style="float:left;">
-    
-     </div>
+  
     </div>
 
 

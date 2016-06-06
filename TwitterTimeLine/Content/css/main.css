@@ -1,48 +1,104 @@
 ﻿body {
 }
 
-.cls{
-    clear:both;
+.cls {
+    clear: both;
 }
 
-.search_tweets 
-{
+.search_tweets {
     width: 70%;
     border: 1px solid #e1e8ed;
     padding: 25px;
     margin: auto;
     height: 83px;
-    background:#F4E8FD;
+    background: #F4E8FD;
 }
 
 .search-tweets-left-column {
-  width: 65%;
-  float:left;
+    width: 65%;
+    float: left;
 }
 
 .search-tweets-right-column {
-  width: 30%;
-  float:left;
+    width: 30%;
+    float: left;
 }
 
-.search-tweets-inner{
-    width:100%;
+.search-tweets-inner {
+    width: 100%;
 }
 
-.search-tweets-btn{
-   background:#AC49EF;
-   color:#fff;
-   height:32px;
-   padding: 0 13px 0 14px;
-   border-radius:4px;
-   border:0;
-   margin: 0 0 0 5px;
+.search-tweets-btn {
+    background: #AC49EF;
+    color: #fff;
+    height: 32px;
+    padding: 0 13px 0 14px;
+    border-radius: 4px;
+    border: 0;
+    margin: 0 0 0 5px;
 }
 
-.tweets_list{
-       border: 1px solid #e1e8ed;
-       border-radius:7px;
-       height:auto;
-       width:70%;
-       margin: 10px auto 0 auto;
+.tweets_list {
+    border: 1px solid #e1e8ed;
+    border-radius: 7px;
+    height: auto;
+    width: 70%;
+    margin: 10px auto 0 auto;
+}
+
+.single-tweet {
+    min-height: 107px;
+    padding: 9px 12px;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.twitter-user-photo {
+    float: left;
+    width: 7%;
+    margin-right: 5px;
+}
+
+.twitter-user-desc-tweet {
+    float: left;
+    width: 80%;
+}
+
+.twitter-user-name {
+    display: block;
+    font-weight: bold;
+}
+
+@media handheld, only screen and (min-width: 283px) and (max-width:482px) {
+
+    .search_tweets {
+        width: 90%;
+        border: 1px solid #e1e8ed;
+        padding: 25px;
+        margin: auto;
+        height: 123px;
+        background: #F4E8FD;
+    }
+
+    .tweets_list {
+        border: 1px solid #e1e8ed;
+        border-radius: 7px;
+        height: auto;
+        width: 70%;
+        margin: 10px auto 0 auto;
+    }
+
+    .single-tweet {
+        min-height: 207px;
+        padding: 9px 12px;
+        border-bottom: 1px solid #e1e8ed;
+    }
+}
+
+@media handheld, screen and (min-width: 483px) and (max-width:800px) {
+}
+
+@media handheld, screen and (min-width: 801px) and (max-width:992px) {
+}
+
+@media handheld, only screen and (min-width: 993px) and (max-width:1200px) {
 }

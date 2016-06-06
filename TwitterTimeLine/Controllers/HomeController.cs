@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using TweetSharp;
 using System.Configuration;
-
 using Newtonsoft.Json;
 
 namespace TwitterTimeLine.Controllers
@@ -25,31 +24,36 @@ namespace TwitterTimeLine.Controllers
         {
             try
             {
-                 //Retrieve consumer key and consumer secret
-            string twitterConsumerKey = ConfigurationManager.AppSettings["TwitterConsumerKey"].ToString();
-            string twitterConsumerSecret = ConfigurationManager.AppSettings["TwitterConsumerSecret"].ToString();
-            var twitterService = new TwitterService(twitterConsumerKey, twitterConsumerSecret);
+                //Retrieve consumer key and consumer secret
+                string twitterConsumerKey = ConfigurationManager.AppSettings["TwitterConsumerKey"].ToString();
+                string twitterConsumerSecret = ConfigurationManager.AppSettings["TwitterConsumerSecret"].ToString();
+                var twitterService = new TwitterService(twitterConsumerKey, twitterConsumerSecret);
 
-            //Authenticate twitter service using Access token and Access token secret
-            var twitterAccessToken = ConfigurationManager.AppSettings["TwitterAccessToken"].ToString();
-            var twitterAccessTokenSecret = ConfigurationManager.AppSettings["TwitterAccessTokenSecret"].ToString();
+                //Authenticate twitter service using Access token and Access token secret
+                var twitterAccessToken = ConfigurationManager.AppSettings["TwitterAccessToken"].ToString();
+                var twitterAccessTokenSecret = ConfigurationManager.AppSettings["TwitterAccessTokenSecret"].ToString();
 
-            twitterService.AuthenticateWith(twitterAccessToken, twitterAccessTokenSecret);
+                twitterService.AuthenticateWith(twitterAccessToken, twitterAccessTokenSecret);
 
-            IEnumerable<TwitterStatus> tweets = twitterService.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions { ScreenName = twitterUsername, Count = 10 });
+                IEnumerable<TwitterStatus> tweets = twitterService.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions { ScreenName = twitterUsername, Count = 10 });
 
-            
+
                 ViewBag.Tweets = tweets;
-            
-            return View();
 
-            }catch(Exception ex){
+                return View();
+
+            }
+            catch (Exception ex)
+            {
                 Response.Write(ex.Message);
                 return View();
             }
-           
-           //return Json(tweets, JsonRequestBehavior.AllowGet);
+
+
         }
+
+       
+
 
     }
 }
