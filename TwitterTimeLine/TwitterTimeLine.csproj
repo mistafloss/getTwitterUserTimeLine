@@ -114,6 +114,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\showtwitterfeed - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\showtwitterfeed - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

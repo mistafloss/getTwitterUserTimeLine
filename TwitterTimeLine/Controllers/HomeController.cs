@@ -37,7 +37,7 @@ namespace TwitterTimeLine.Controllers
 
                 IEnumerable<TwitterStatus> tweets = twitterService.ListTweetsOnUserTimeline(new ListTweetsOnUserTimelineOptions { ScreenName = twitterUsername, Count = 10 });
 
-
+              
                 ViewBag.Tweets = tweets;
 
                 return View();
